@@ -10,27 +10,114 @@
 
 </head>
 <body>
-    <button type="button" class="btn btn-primary" onclick="checkAge()">Who am I</button>
-    <br><br>
-    
-    <button type="button" class="btn btn-primary" onclick="specSymbol()">specSymbol</button>
-    <br><br>
-    <button type="button" class="btn btn-primary" onclick="sameNmbrs()">sameNmbrs</button>
-    <br><br>
-    <button type="button" class="btn btn-primary" onclick="leap()">leap year</button>
-    <br><br>
-    <button type="button" class="btn btn-primary" onclick="plndrm()">Palindrome</button>
-    <br><br>
-    <button type="button" class="btn btn-primary" onclick="cnvrtr()">Converte!</button>
-    <br><br>
-    <button type="button" class="btn btn-primary" onclick="discount()">Your discount!</button>
-    <br><br>
-    <button type="button" class="btn btn-primary" onclick="kvadrat()">Kvadrat i krug</button>
-    <br><br>
-    <button type="button" class="btn btn-primary" onclick="voprosnik()">Ask me</button>
-    <br><br>
-    <button type="button" class="btn btn-primary" onclick="nextDate()">Next Date</button>
-    <br><br>
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Задача 1</h5>
+              <p class="card-text">Запросить у пользователя его возраст и определить, кем он является: ребенком (0–2), подростком (12–18), взрослым (18_60) или пенсионером (60– ...).</p>
+              <button type="button" class="btn btn-primary" onclick="checkAge()">Who am I</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card text-dark bg-light mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Задача 2</h5>
+              <p class="card-text">Запросить у пользователя число от 0 до 9 и вывести ему спецсимвол, который расположен на этой клавише (1–!, 2–@, 3–# и т. д).</p>
+              <button type="button" class="btn btn-primary" onclick="specSymbol()">Choose number</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card text-dark bg-light mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Задача 3</h5>
+              <p class="card-text">Запросить у пользователя трехзначное число и проверить, есть ли в нем одинаковые цифры.</p>
+              <br>
+              <button type="button" class="btn btn-primary" onclick="sameNmbrs()">Check my Number</button>            
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card text-dark bg-light mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Задача 4</h5>
+              <p class="card-text">Запросить у пользователя год и проверить, високосный он или нет. Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100.</p>
+              <br>
+              <button type="button" class="btn btn-primary" onclick="leap()">Check Year</button>            
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card text-dark bg-light mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Задача 5</h5>
+              <p class="card-text">Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.</p>
+              <br>
+              <button type="button" class="btn btn-primary" onclick="plndrm()">Check Number</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card text-dark bg-light mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Задача 6</h5>
+              <p class="card-text">Написать конвертор валют. Пользователь вводит количество USD, выбирает, в какую валюту хочет перевести EUR, UAN или AZN, и получает в ответ соответствующую сумму.</p>
+              <button type="button" class="btn btn-primary" onclick="cnvrtr()">Converte!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card text-dark bg-light mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Задача 7</h5>
+              <p class="card-text">Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.</p>
+              <button type="button" class="btn btn-primary" onclick="discount()">Your discount!</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card text-dark bg-light mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Задача 8</h5>
+              <p class="card-text">Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.</p>
+              <button type="button" class="btn btn-primary" onclick="kvadrat()">Check my Circle</button>        
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card text-dark bg-light mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Задача 9</h5>
+              <p class="card-text">Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла. После вопросов выведите пользователю количество набранных баллов.</p>
+              <button type="button" class="btn btn-primary" onclick="voprosnik()">Ask me</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card text-dark bg-light mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Задача 10</h5>
+              <p class="card-text">Запросить дату (день, месяц, год) и вывести следующую за ней дату. Учтите возможность перехода на следующий месяц, год, а также високосный год.</p>
+              <br>
+              <button type="button" class="btn btn-primary" onclick="nextDate()">Next Date</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
 </body>

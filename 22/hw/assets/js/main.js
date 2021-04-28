@@ -12,8 +12,10 @@ function checkAge(){
         alert("You are teenager");
     }else if(a>18 && a<=60){
         alert("You are adult");
+    }else if(a>60 && a<=120){
+        alert("You are pensioner");
     }else{
-        alert("You are pensioner or vampire");
+        alert("Maby You're Vampire? Or Enter correct Age")
     }
 }
 // Запросить у пользователя число от 0 до 9 и вывести ему спецсимвол, 
@@ -86,7 +88,7 @@ function leap(){
     let userYear = parseInt(prompt("Enter a year"));
     if (isNaN(userYear)){
         alert("wrong data, enter a year by numbers")
-    }else if((userYear%400==0 || userYear%4==0) && userYear%100>0){
+    }else if(userYear%400==0 || (userYear%4==0 && userYear%100>0)){
         alert("This Year is Leap");
     }else{
         alert("This Year isn't Leap");
@@ -178,7 +180,7 @@ function kvadrat(){
         r=(l/(2*Math.PI)).toFixed(3),
         a=(per/4).toFixed(3);
         // при условии, что пользователь введет корректно данные
-    let rez = ((2*r)<=a)?'pomestitsya':'ne pomestitsya';
+    let rez = (2*r)<=a?'pomestitsya':'ne pomestitsya';
     alert(rez);
 }
 
@@ -198,10 +200,12 @@ function kvadrat(){
 
 
 function voprosnik(){
-const a = prompt("Choose one corect answer and enter 1, 2 or 3\n2+2 = ?\n1.3; 2.2; 3.4"),
-    b = prompt("Matroskin is a ...\n1.Cow; 2.Rat; 3.Cat"),
-    c = prompt("What was first egg or chicken?\n1.Egg; 2.Chicken; 3.Beetroot");
-    if(!isNaN(a,b,c), (a<4 && a>0) && (b<4 && b>0) && (c<4 && c>0)){
+        // делала до урока, когда разбирали эту задачу, пока оставила так, как было
+        // по разбору кстати не получилось
+const a = prompt("Choose one corect answer and enter 1, 2 or 3\n2+2 = ?\n1  - 3\n2  - 2\n3  - 4"),
+    b = prompt("Matroskin is a ...\n1  - Cow\n2  - Rat\n3  - Cat"),
+    c = prompt("What was first egg or chicken?\n1  - Egg\n2  - Chicken\n3  - Beetroot");
+    if(!isNaN(a,b,c), (a<4 && a>0) || (b<4 && b>0) || (c<4 && c>0)){
         if(a==3 && b==3 && c==3){
             alert("your score is 6. Gratz!");
         }else if((a==3 && b==3) || (a==3 && c==3) || (b==3 && c==3)){
@@ -228,9 +232,9 @@ const a = prompt("Choose one corect answer and enter 1, 2 or 3\n2+2 = ?\n1.3; 2.
 
 
 function nextDate(){
-    debugger;
+    // делала до урока, когда разбирали эту задачу, пока оставила так, как было
     let date = prompt("Enter the date - dd-mm-yyyy"),//06-11-2021
-    monthDays,
+    maxDays,
     ndate='',
     arrDate = date.split('-'),
     d = parseInt(arrDate[0]), //d=6 ==>d=7
@@ -239,7 +243,7 @@ function nextDate(){
     if(d>31 || d<1 || m>12 || m<1 || y<1){
         alert ("enter correct date - dd-mm-yyyy");
     }else{
-        monthDays = 0;
+        maxDays = 0;
         switch(m){
             case 1:
             case 3:
@@ -248,42 +252,51 @@ function nextDate(){
             case 8:
             case 10:
             case 12:
-                monthDays = 31;
+                maxDays = 31;
                 break;
             case 2:
-                if((y%400==0 || y%4==0) && y%100>0){
-                    monthDays = 29;
+                if(y%400==0 || (y%4==0 && y%100>0)){
+                    maxDays = 29;
                 }else{
-                    monthDays = 28;
+                    maxDays = 28;
                 }
                 break;
             case 4:
             case 6:
             case 9:
             case 11:
-                monthDays = 30;
+                maxDays = 30;
                 break;
             default:
                 alert("Smt wrong with month");
                 break;
             }
-        if((d>0 && d<31 && monthDays == 31) || (d>0 && d<30 && monthDays==30) || (d>0 && d<29 && monthDays==29) ||(d>0 && d<28 && monthDays==28)){
+        if((d>0 && d<31 && maxDays == 31) || (d>0 && d<30 && maxDays==30) || (d>0 && d<29 && maxDays==29) ||(d>0 && d<28 && maxDays==28)){
             d+=1;
+            d=addZero(d);
+            m=addZero(m);
             ndate=`${d}-${m}-${y}`;
             alert(ndate);
-        }else if((d=31 && monthDays == 31 && m!=12) ||(d=30 && monthDays == 30) || (d=29 && monthDays == 29) || (d=28 && monthDays == 28)){
+        }else if((d=31 && maxDays == 31 && m!=12) ||(d=30 && maxDays == 30) || (d=29 && maxDays == 29) || (d=28 && maxDays == 28)){
             d=1;
             m+=1;
+            d=addZero(d);
+            m=addZero(m);
             ndate=`${d}-${m}-${y}`;
             alert(ndate);
-        }else if(d=31 && monthDays == 31 && m==12){
+        }else if(d=31 && maxDays == 31 && m==12){
             d=1;
             m=1;
             y+=1;
+            d=addZero(d);
+            m=addZero(m);
             ndate=`${d}-${m}-${y}`;
             alert(ndate);
         }else{
             alert("Please, try again");
         }
     }
+}
+function addZero(n){
+    return(n<10)?'0'+n:n;
 }
