@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row mb-4"><p>Подсчитать сумму всех чисел в заданном пользователем диапазоне </p>
+            <div class="col-2">
+                <input type="number" class="form-control" id="first_nmbr" placeholder="Enter first number">
+            </div>
+            <div class="col-2">
+                <input type="number" class="form-control" id="sec_nmbr"placeholder="Enter last number">
+            </div>
+            <div class="col-2">
+                <button class="btn btn-success" onclick="diapazon()">GO!</button>
+            </div>
+            <div class="col-6" id="d_rez"></div>
+        </div>
+        <hr>
+        <div class="row mb-4"><p>Запросить 2 числа и найти только наибольший общий делитель.</p>
+            <div class="col-2">
+                <input type="number" class="form-control" id="number1_del" placeholder="Enter first number">
+            </div>
+            <div class="col-2">
+                <input type="number" class="form-control" id="number2_del"placeholder="Enter last number">
+            </div>
+            <div class="col-2">
+                <button class="btn btn-success" onclick="max_del()">GO!</button>
+            </div>
+            <div class="col-6" id="del_rez"></div>
+        </div>
+        <hr>
+        <div class="row mb-4"><p>Запросить у пользователя число и вывести все делители этого числа.</p>
+            <div class="col-4">
+                <input type="number" class="form-control" id="custom_nmbr" placeholder="Enter first number">
+            </div>
+            <div class="col-2">
+                <button class="btn btn-success" onclick="allDel()">GO!</button>
+            </div>
+            <div class="col-6" id="allDel_rez"></div>
+        </div>
+        <hr>
+        <div class="row mb-4"><p>Определить количество цифр в введенном числе.</p>
+            <div class="col-4">
+                <input type="number" class="form-control" id="custom_nmbr2" placeholder="Enter first number">
+            </div>
+            <div class="col-2">
+                <button class="btn btn-success" onclick="countI()">GO!</button>
+            </div>
+            <div class="col-6" id="countI_rez"></div>
+        </div>
+        <hr>
+        <div class="row mb-4"><p>Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных,<br> 
+            отрицательных и нулей. При этом также посчитать, сколько четных и нечетных. <br>
+            Вывести статистику на экран. <br>
+            Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем.</p>
+            <div class="col-4">
+                <input type="text" class="form-control" id="allnmbrs" placeholder="Enter 10 numbers with , ">
+            </div>
+            <div class="col-2">
+                <button class="btn btn-success" onclick="tenNmbrs()">GO!</button>
+            </div>
+            <div class="col-6" id="tenNmbrs_rez"></div>
+        </div>
+        <hr>
+        <div class="row mb-4"><p>Зациклить калькулятор. Запросить у пользователя 2 числа и знак,<br>решить пример, вывести результат и спросить, хочет ли он решить еще один пример.<br> И так до тех пор, пока пользователь не откажется.</p>
+            <div class="col-2">
+                <button class="btn btn-success" onclick="calc()">CALC!</button>
+            </div>
+        </div>
+        <hr>
+        <div class="row mb-4"><p>Запросить у пользователя число и на сколько цифр его сдвинуть. <br>Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).</p>
+            <div class="col-2">
+                <input type="number" class="form-control" id="cas_nmbr" placeholder="Enter Your Number">
+            </div>
+            <div class="col-2">
+                <input type="number" class="form-control" id="zdvig" placeholder="Enter step">
+            </div>
+            <div class="col-2">
+                <button class="btn btn-success" onclick="castStep()">GO!</button>
+            </div>
+            <div class="col-6" id="cStep"></div>
+        </div>
+        <hr>
+        <div class="row mb-4"><p>Зациклить вывод дней недели таким образом: «День недели. <br>Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.</p>
+            <div class="col-2">
+                <button class="btn btn-success" onclick="nextDay()">What a beautiful day!</button>
+            </div>
+        </div>
+        <hr>
+        <div class="row mb-4"><p>Вывести таблицу умножения для всех чисел от 2 до 9.<br>Каждое число необходимо умножить на числа от 1 до 10.</p>
+            <div class="col-2">
+                <button class="btn btn-success" onclick="tableMn()">GO!</button>
+            </div>
+            <div class="col-10" id="tabl_umnozh"></div>
+        </div>
+        <hr>
+        <div class="row mb-4"><p>Загадайте и запомните число от 1 до 100</p>
+            <div class="col-2">
+                <button class="btn btn-success" onclick="game()">GO!</button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
