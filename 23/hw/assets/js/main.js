@@ -15,6 +15,7 @@ function diapazon(){
     }
 }
 // gotov
+
 // Запросить 2 числа и найти только наибольший общий делитель.
 
 // 36 32 4 
@@ -184,29 +185,20 @@ function nextDay(){
 
 function tableMn(){
     // debugger;
-    let tabl='',
-        stroka='',
-        obertka=`<div style="display: flex;
-        width:900px;
-        flex-direction: raw;
-        justify-content: space-between;
-        border: 1px solid #000;
-        margin: 10px 10px;">`;
+    let tabl='';
     for(let i = 2; i<=9;i++){
-        tabl+=`<div style="width: 33.3333%;
+        tabl+=`<div style="width: 20%;
             border: 1px solid #000;
             margin: 10px 10px;">`;
         for(let j=1;j<=10;j++){
-           stroka+= `<div>${i} &times; ${j} = ${i*j}</div>`;
+           tabl+= `<div>${i} &times; ${j} = ${i*j}</div>`;
         };
-        tabl = `${tabl}`+`${stroka}`+`</div>`;  
+        tabl = `${tabl}`+`</div>`;  
     }
-    obertka=`${obertka}`+`${tabl}`+`</div>`;
-    document.getElementById("tabl_umnozh").innerHTML = obertka;
+    document.getElementById("tabl_umnozh").innerHTML = tabl;
 }
-//hz - непонятно, как зделать так, чтобы выводились только прявильные столбики
-// пока оставляю так, мб что-то придумаю
-// ne gotov
+
+//gotov
 
 // Игра «Угадай число». Предложить пользователю загадать число от 0 до 100 
 // и отгадать его следующим способом: каждую итерацию цикла делите диапазон чисел пополам, 
