@@ -36,44 +36,58 @@ function buildCar(manufacturer,model,yearOfIssue,avarSpeed){
 // Object.defineProperty(Car, "b", {set:function(x){
 //     this.yearOfIssue = x;
 //     }
+
 function kakayaToFunc (a,b){
+    debugger;
     //a - avSp, b - km s polya
-    let k = 0,
-        m = (b/a)%4;
-    if(b/a<4){
-        k = b/a;
+    let m=b/a;
+    if(m<=4&&m>0){
+        return m;
     }else{
-        for(let i =0; i<m; i++){
-            k = b/a+i;
+        for (let i=0;i<m;i++){
+            if(i%4==0){
+                m+=1;
+            }
         }
     }
-    console.log(k);
+    return m;
 }
 let porsche = new Car('Porsche AG','Porsche 918',2015,'250 km/h'),
     nissan = new Car('Nissan','Nissan 350Z',2008,'200 km/h'),
     audi = new Car('Audi','Audi Q8',2018,'245 km/h');
 CARS.push(porsche,nissan,audi);
 function func(n){
-    let msg = '';
+    let msg='';
+    let rez;
+    let avSp;
+    let kmm =+document.getElementById("first_nmbr2").value;
     switch (n){
         case '':
             msg = 'Выберите авто';
             document.getElementById("firstBtn").disabled = true;
+            rez="";
         break;
         case 'Porsche':
             msg = `<ul><li>Производитель - ${CARS[0].manufacturer}</li><li>Модель авто - ${CARS[0].model}</li><li>Год выпуска - ${CARS[0].yearOfIssue}</li><li>Средняя скорость авто - ${CARS[0].avarSpeed}</li>`;
             document.getElementById("firstBtn").disabled = false;
+            avSp = parseInt(CARS[0].avarSpeed);
+            rez = kakayaToFunc(avSp, kmm);
         break;
         case 'Nissan':
             msg = `<ul><li>Производитель - ${CARS[1].manufacturer}</li><li>Модель авто - ${CARS[1].model}</li><li>Год выпуска - ${CARS[1].yearOfIssue}</li><li>Средняя скорость авто - ${CARS[1].avarSpeed}</li>`;
             document.getElementById("firstBtn").disabled = false;
+            avSp = parseInt(CARS[1].avarSpeed);
+            rez = kakayaToFunc(avSp, kmm);
         break;
         case 'Audi':
             msg = `<ul><li>Производитель - ${CARS[2].manufacturer}</li><li>Модель авто - ${CARS[2].model}</li><li>Год выпуска - ${CARS[2].yearOfIssue}</li><li>Средняя скорость авто - ${CARS[2].avarSpeed}</li>`;
             document.getElementById("firstBtn").disabled = false;
+            avSp = parseInt(CARS[2].avarSpeed);
+            rez = kakayaToFunc(avSp, kmm);
         break;
     }
     document.getElementById("firstTask").innerHTML = msg;
+    document.getElementById("firstTask2").innerHTML = rez;
 }
 
 // const car = {
