@@ -354,8 +354,8 @@ function dateDiff(tenH,tenM,tenS,tenH2,tenM2,tenS2){
     let arrTime2 = isNumberNun(tenH2,tenM2,tenS2);
     const max = toSec(arrTime1)>toSec(arrTime2)?toSec(arrTime1):toSec(arrTime2);
     const min = toSec(arrTime1)<toSec(arrTime2)?toSec(arrTime1):toSec(arrTime2);
-    let differ =max-min;
-    rezultatTyt = toFullTime(differ);
+    let differ =max-min,
+        rezultatTyt = toFullTime(differ);
     document.getElementById("tenTask").innerText = rezultatTyt;
 }
 //gotov
