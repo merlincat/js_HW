@@ -42,9 +42,9 @@ function twoNmbrs2 (a, b){
     //     return 0;
     // }
 }
-function twoNmbrs(firstNum, secNum){
-    firstNum = document.getElementById("first_nmbr1").value,
-    secNum = document.getElementById("first_nmbr2").value;
+function twoNmbrs(){
+    let firstNum = document.getElementById("first_nmbr1").value,
+        secNum = document.getElementById("first_nmbr2").value;
     let n = twoNmbrs2(firstNum, secNum);
     document.getElementById("firstTask").innerHTML = n;
 }
@@ -83,9 +83,9 @@ function fucktorial2(sNmbr){
     }
     return factRez;
 }
-function fucktorial (cusNmbr){
-    cusNmbr = parseInt(document.getElementById("sec_nmbr1").value);
-    secondTask = !isNaN(cusNmbr)?fucktorial2(cusNmbr):'Enter number!';
+function fucktorial (){
+    let cusNmbr = parseInt(document.getElementById("sec_nmbr1").value),
+        secondTask = !isNaN(cusNmbr)?fucktorial2(cusNmbr):'Enter number!';
     document.getElementById("secondTask").innerHTML = secondTask;
 }
     // if(!isNaN(cusNmbr)){
@@ -113,10 +113,10 @@ function fucktorial (cusNmbr){
 function oneNmbr2(frst, sec, thir){
     return +(frst+sec+thir);
 }
-function oneNmbr(k,l,m){
-    k=document.getElementById("thi_nmbr1").value;
-    l=document.getElementById("thi_nmbr2").value;
-    m=document.getElementById("thi_nmbr3").value;
+function oneNmbr(){
+    let k=document.getElementById("thi_nmbr1").value,
+        l=document.getElementById("thi_nmbr2").value,
+        m=document.getElementById("thi_nmbr3").value;
     let thirdTask = oneNmbr2(k,l,m);
     // console.log(typeof(thirdTask));
     document.getElementById("thirdTask").innerHTML = thirdTask;
@@ -161,10 +161,10 @@ function provSqr (a,b){
     }
     return fourthTask;
 }
-function squre(a, b){
-    debugger;
-    a=parseInt(document.getElementById("fourth_nmbr1").value);
-    b=parseInt(document.getElementById("fourth_nmbr2").value);
+function squre(){
+    // debugger;
+    let a=parseInt(document.getElementById("fourth_nmbr1").value),
+        b=parseInt(document.getElementById("fourth_nmbr2").value);
     let rezSqr = provSqr(a,b);
     document.getElementById("fourthTask").innerHTML = rezSqr + ' квадратных единиц';
 }
@@ -204,8 +204,8 @@ function sumDel(chislo){
     }
     return rezDel;
 }
-function perfectNmbr (cstmrNmbr){
-    cstmrNmbr = parseInt(document.getElementById("fifth_nmbr1").value);
+function perfectNmbr (){
+    let cstmrNmbr = parseInt(document.getElementById("fifth_nmbr1").value);
     let suma_deliteley2 = sumDel(cstmrNmbr),
         itog = isPerfect(cstmrNmbr, suma_deliteley2);
     document.getElementById("fifthTask").innerText = itog;
@@ -217,9 +217,9 @@ function perfectNmbr (cstmrNmbr){
 //  и выводит только те числа из диапазона, которые являются совершенными. 
 //  Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет. 
 
-function vyvozhyPerfectNmbrs(min, max){
-    min = parseInt(document.getElementById("six_nmbr1").value);
-    max = parseInt(document.getElementById("six_nmbr2").value);
+function vyvozhyPerfectNmbrs(){
+    let min = parseInt(document.getElementById("six_nmbr1").value),
+        max = parseInt(document.getElementById("six_nmbr2").value);
     let a = [];
     for( let i=min; i<=max; i++){
         sumaD = sumDel(i);
@@ -285,13 +285,13 @@ function isNumberNun(n1,n2,n3){
     n3 = parseInt(isNaN(n3)?'0':n3);
     return [n1,n2,n3];
 }
-function parseTime(h, m ,s){
-    debugger;
-    h = parseInt(document.getElementById("seven_h").value);
-    m = parseInt(document.getElementById("seven_m").value);
-    s = parseInt(document.getElementById("seven_s").value);
-    let arrTime = isNumberNun(h,m,s); //arr
-    let rez = menyayuNaVremya(arrTime);
+function parseTime(){
+    // debugger;
+    let h = parseInt(document.getElementById("seven_h").value),
+        m = parseInt(document.getElementById("seven_m").value),
+        s = parseInt(document.getElementById("seven_s").value);
+    // let arrTime = isNumberNun(h,m,s); //arr
+    let rez = menyayuNaVremya(isNumberNun(h,m,s));
     document.getElementById("sevenTask").innerText = rez;
 }
 // gotov
@@ -303,12 +303,12 @@ function toSec(arrS){
     s=arrS[2];
     return s+m*60+h*3600;  
 }
-function parseToSec(eight_h,eight_m,eight_s){
+function parseToSec(){
     eight_h = parseInt(document.getElementById("eight_h").value);
     eight_m = parseInt(document.getElementById("eight_m").value);
     eight_s = parseInt(document.getElementById("eight_s").value);
-    let arrTime2 = isNumberNun(eight_h,eight_m,eight_s);
-    let seconds = toSec(arrTime2);
+    // let arrTime2 = isNumberNun(eight_h,eight_m,eight_s);
+    let seconds = toSec(isNumberNun(eight_h,eight_m,eight_s));
     document.getElementById("eightTask").innerText = seconds;
 }
 //gotov
@@ -342,19 +342,24 @@ function toFullTime(nineS){
 // сначала обе даты переведите в секунды, 
 // узнайте разницу в секундах, а потом разницу переведите обратно в «чч:мм:сс»
 
+
+function getFromField(){
+    let hr1 = parseInt(document.getElementById("ten_h").value),
+        mnt1 = parseInt(document.getElementById("ten_m").value),
+        scnd1 = parseInt(document.getElementById("ten_s").value),
+        hr2 = parseInt(document.getElementById("ten_h2").value),
+        mnt2 = parseInt(document.getElementById("ten_m2").value),
+        scnd2 = parseInt(document.getElementById("ten_s2").value);
+    dateDiff(hr1,mnt1,scnd1,hr2,mnt2,scnd2);
+}
+
 function dateDiff(tenH,tenM,tenS,tenH2,tenM2,tenS2){
-    debugger;
-    tenH = parseInt(document.getElementById("ten_h").value);
-    tenM = parseInt(document.getElementById("ten_m").value);
-    tenS = parseInt(document.getElementById("ten_s").value);
-    tenH2 = parseInt(document.getElementById("ten_h2").value);
-    tenM2 = parseInt(document.getElementById("ten_m2").value);
-    tenS2 = parseInt(document.getElementById("ten_s2").value);
-    let arrTime1 = isNumberNun(tenH,tenM,tenS);
-    let arrTime2 = isNumberNun(tenH2,tenM2,tenS2);
-    const max = toSec(arrTime1)>toSec(arrTime2)?toSec(arrTime1):toSec(arrTime2);
-    const min = toSec(arrTime1)<toSec(arrTime2)?toSec(arrTime1):toSec(arrTime2);
-    let differ =max-min,
+    // debugger;
+    // let arrTime1 = isNumberNun(tenH,tenM,tenS);
+    // let arrTime2 = isNumberNun(tenH2,tenM2,tenS2);
+    const timeInSecArr1 = toSec(isNumberNun(tenH,tenM,tenS));
+    const timeInSecArr2 = toSec(isNumberNun(tenH2,tenM2,tenS2));
+    let differ =Math.abs(timeInSecArr1-timeInSecArr2),
         rezultatTyt = toFullTime(differ);
     document.getElementById("tenTask").innerText = rezultatTyt;
 }
